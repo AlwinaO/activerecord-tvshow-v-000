@@ -8,7 +8,10 @@ class Show < ActiveRecord::Base
     # binding.pry
     show = Show.highest_rating
     Show.find_by(rating: highest_rating)
+  end
 
+  def self.lowest_rating
+    Show.minimum("rating")
   end
 
 end
